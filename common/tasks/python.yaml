@@ -1,0 +1,8 @@
+- name: install python
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - python3
+    - gcc
+    - python3-devel
