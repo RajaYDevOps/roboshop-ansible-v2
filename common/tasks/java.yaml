@@ -1,0 +1,14 @@
+- name: install maven
+  package:
+    name: maven
+    state: present
+
+- name: install dependencies
+  command: mvn clean package
+  args: #why args is required here, need to check about connectin b/w args and command.
+    chdir: /app
+    
+- name: move shipping jar
+  command: mv target/shipping-1.0.jar shipping.jar 
+  args:
+    chdir: /app
