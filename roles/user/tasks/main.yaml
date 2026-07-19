@@ -12,3 +12,9 @@
   import_role:
     name: common
     tasks_from: systemd-setup
+
+- name: enable and restart
+  service:
+    name: user
+    enabled: yes
+    state: restarted
