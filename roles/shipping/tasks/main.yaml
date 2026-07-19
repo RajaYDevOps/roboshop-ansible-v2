@@ -31,10 +31,10 @@
     login_password: "{{ mysql_login_password }}"
     login_host: "{{ MYSQL_HOST }}"
     target: "{{ item }}"
-    loop:
-    - /app/db/schema.sql
-    - /app/db/app-user.sql
-    - /app/db/master-data.sql
+  loop:
+  - /app/db/schema.sql
+  - /app/db/app-user.sql
+  - /app/db/master-data.sql
 
 - name: restart 
   import_role:
