@@ -1,1 +1,4 @@
 #MYSQL_ROOT_PASSWORD: Roboshop@1
+- name: get the password from AWS secret manager
+  debug:
+    msg: "{{ lookup('amazon.aws.aws_secret', 'roboshop/msql_root_pssword', region='us-east-1') }}"
